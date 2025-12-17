@@ -1,0 +1,80 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<style>
+    .delete-container {
+        max-width: 500px;
+        margin: 80px auto;
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .delete-container h2 {
+        color: #dc3545;
+        margin-bottom: 15px;
+    }
+
+    .delete-container p {
+        font-size: 16px;
+        margin-bottom: 25px;
+        color: #333;
+    }
+
+    .delete-actions {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .btn {
+        padding: 10px 18px;
+        border-radius: 6px;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+    .btn-danger:hover {
+        background-color: #c82333;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: #fff;
+    }
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+</style>
+
+<div class="delete-container">
+    <h2>Confirm Deletion</h2>
+
+    <p>
+        Are you sure you want to delete <strong>"{{ obj }}"</strong>?
+        <br>
+        This action cannot be undone.
+    </p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="delete-actions">
+            <a class="btn btn-secondary" href="{{ request.META.HTTP_REFERER }}">
+                Cancel
+            </a>
+            <input class="btn btn-danger" type="submit" value="Delete" />
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

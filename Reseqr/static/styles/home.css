@@ -1,0 +1,13 @@
+@font-face {
+    font-family: Basina;
+    src: url(../fonts/Belanosima-Regular.ttf);
+}
+
+.topics {
+    font-family: Basina;  
+    background-color: #00ffff;  
+    
+}
+body {
+    background-color: rgb(88, 233, 233);
+}

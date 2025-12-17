@@ -1,0 +1,8 @@
+@font-face {
+    font-family: Lasina;
+    src: url(../fonts/ZalandoSansSemiExpanded-VariableFont_wght.ttf);
+}
+body{
+    font-family: Lasina;
+    background-color: aqua;
+}
