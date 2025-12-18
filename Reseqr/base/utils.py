@@ -1,7 +1,7 @@
 import re
 from urllib.parse import urlparse, parse_qs
 
-def youtube_to_embed(url, origin="http://127.0.0.1:8000"):
+def youtube_to_embed(url, origin="https://reseqr.com"):
     """
     Converts a YouTube URL into a safe embed URL.
     Returns None if URL is invalid.
